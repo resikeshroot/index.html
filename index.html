@@ -1,54 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Copy Text to Clipboard</title>
-<style>
-.copy-text {
-  display: inline-block;
-  padding: 5px 10px;
-  background-color: #f0f0f0;
-  border: 1px solid #ccc;
-  cursor: pointer;
-}
-
-.copy-text:hover {
-  background-color: #e0e0e0;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download PDF</title>
 </head>
 <body>
-
-<span class="copy-text" onclick="copyToClipboard()">Copy Text</span>
-
-<script>
-function copyToClipboard() {
-  /* Get the text to copy */
-  var textToCopy = "Text you want to copy";
-  
-  /* Create a temporary input element */
-  var tempInput = document.createElement("input");
-  
-  /* Set the input value to the text to copy */
-  tempInput.value = textToCopy;
-  
-  /* Append the input element to the DOM */
-  document.body.appendChild(tempInput);
-  
-  /* Select the input field */
-  tempInput.select();
-  
-  /* Copy the selected text */
-  document.execCommand("copy");
-  
-  /* Remove the temporary input element */
-  document.body.removeChild(tempInput);
-  
-  /* Alert the user that the text has been copied */
-  alert("Text copied to clipboard: " + textToCopy);
-}
-</script>
+    <h1>Download PDF</h1>
+    
+    <!-- Replace 'sample.pdf' with the URL or path of your PDF file -->
+    <a href="sample.pdf" download="sample.pdf">Download PDF</a>
+</body>
+</html>
 
 </body>
 </html>
