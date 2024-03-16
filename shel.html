@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Text in Boxes</title>
+<style>
+    .text-box {
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+</style>
+</head>
+<body>
+
+<div class="text-box">
+    1 Amstrong or Not
+    #!/bin/bash
+    echo "Enter the number"
+    read num
+    n=$num
+    sum=0
+    while [ $num -gt 0 ]
+    do
+    rem=$(($num%10))
+    sum=$(($sum+($rem * $rem * $rem)))
+    num=$(($num/10))
+    done
+    if [ $sum -eq $n ]
+    then
+    echo "$n is armstrong"
+    else
+    echo "$n is not armstrong"
+    fi</div>
+<div class="text-box">2 Calculatorelse
+    #!/bin/bash
+    echo "Enter two numbers:"
+    read a
+    read b
+    echo "Enter choice:"
+    echo "1.Addition"
+    echo "2.Substraction"
+    echo "3.Multiplication"
+    echo "4.Division"
+    echo "Enter a choice"
+    read ch
+    case $ch in
+    1)res=`echo $a+$b|bc`;;
+    2)res=`echo $a-$b|bc`;;
+    3)res=`echo $a*$b|bc`;;
+    4)res=`echo "scale=2;$a/$b"|bc`;;
+    esac
+    echo "Result=$res"</div>
+<div class="text-box">3 circle
+    #!/bin/bash
+    echo "Enter the radius"
+    read r
+    area=$(echo "scale=2;3.14*($r*$r)"|bc)
+    echo "area of circle=$area"</div>
+<div class="text-box">4 Count of line
+    #!/bin/bash
+    echo Enter the file name
+    read file
+    w=`cat $file | wc -w`
+    c=`cat $file | wc -c`
+    l=`grep -c "." $file`
+    echo Number of characters in $file is $((
+    $c - 1 ))
+    echo Number of words in $file is $w
+    echo Number of lines in $file is $1</div>
+<div class="text-box">5. Factorial
+    #!/bin/bash
+    echo "Enter a number"
+    read num
+    fact=1
+    while [ $num -gt 1 ]
+    do
+    fact=$((fact * num))
+    num=$((num - 1))
+    done
+    echo "factorial=$fact"</div>
+<div class="text-box">6 Fibonacci
+    #!/bin/bash
+    echo "Enter the limit"
+    read n
+    x=0
+    y=1
+    i=2
+    echo "Fibonacci series upto $n terms"
+    echo "$x"
+    echo "$y"
+    while [ $i -lt $n ]
+    do
+    i=`expr $i + 1`
+    z=`expr $x + $y`
+    echo "$z"
+    x=$y
+    y=$z
+    done</div>
+<div class="text-box">Goodmorning
+    #!/bin/bash
+
+    # Extracting the current hour
+    hours=$(date | cut -c12-13)
+    
+    # Checking the time and displaying the appropriate message
+    if [ "$hours" -le 12 ]; then
+        echo "Good morning"
+    elif [ "$hours" -le 16 ]; then
+        echo "Good afternoon"
+    elif [ "$hours" -le 20 ]; then
+        echo "Good evening"
+    fi
+    </div>
+<div class="text-box">8 Gross salary
+    #!/bin/bash
+    echo "enter the basic salary:"
+    read basic
+    a=$(( $basic * 40 ))
+    da=$(( $a / 100 ))
+    b=$(( $basic * 20 ))
+    hra=$(( $b / 100 ))
+    gsalary=$(( $basic + $da + $hra ))
+    echo "The gross salary is : $gsalary"</div>
+<div class="text-box">9 Largest of three number
+    #!/bin/bash
+    echo "Enter first number"
+    read first
+    echo "Enter second number"
+    read sec
+    echo "Enter third number"
+    read third
+    if [ $first -gt $sec ]; then
+    if [ $first -gt $third ]; then
+    echo "$first is greatest number"
+    else
+    echo "$third is greatest number"
+    fi
+    else
+    if [ $sec -gt $third ]; then
+    echo "$sec is greatest number"
+    else
+    echo "$third is greatest number"
+    fi
+    fi</div>
+<div class="text-box">10 Mean and stadard Deviation #!/bin/bash
+    echo "Enter first number:"
+    read n1
+    echo "Enter second number:"
+    read n2
+    echo "Enter third number:"
+    read n3
+    m=$(($n1 + $n2 + $n3))
+    mean=$(echo "scale=2;$m / 3"|bc)
+    echo
+    echo "mean=$mean"
+    y1=$(echo "$n1-$mean"|bc)
+    y2=$(echo "$n2-$mean"|bc)
+    y3=$(echo "$n3-$mean"|bc)
+    x1=$(echo "$y1 ^ 2"|bc)
+    x2=$(echo "$y2 ^ 2"|bc)
+    x3=$(echo "$y3 ^ 2"|bc)
+    s=$(echo "scale=2;$(echo $x1 + $x2
+    +$x3|bc)/2"|bc)
+    sd=$(echo "sqrt($s)"|bc)
+    echo "standard deviation=$sd"</div>
+<div class="text-box">11 Prime number
+    #!/bin/bash
+    echo "Enter the limit:"
+    read n
+    echo "The prime numbers between 1 and
+    $n are:"
+    for((i=2;i<=$n;i++))
+    do
+    f=0
+    for((j=2;j<=$(($i/2));j++))
+    do
+    if [ $(($i%$j)) -eq 0 ]
+    then
+    f=1
+    fi
+    done
+    if [ $f -ne 1 ]
+    then
+    echo $i
+    fi
+    done</div>
+<div class="text-box">12 Reverse of number
+    #!/bin/bash
+    echo "Enter the number:"
+    read n
+    sd=0
+    rev=0
+    g=$n
+    while [ $n -gt 0 ]
+    do
+    sd=$(($n%10))
+    rev=$(($rev*10+$sd))
+    n=$(($n/10))
+    done
+    echo "Reverse of $g is:$rev"</div>
+<div class="text-box">13 Sum of digits
+    #!/bin/bash
+    echo "Enter a number"
+    read n
+    g=$n
+    s=0
+    while [ $n -gt 0 ]
+    do
+    k=$(($n%10))
+    n=$(($n/10))
+    s=$(($s+$k))
+    done
+    echo "sum of digits of $g is:$s"</div>
+</div>
+<div class="text-box">This is the content of box 3</div>
+<div class="text-box">This is the content of box 4</div>
+<div class="text-box">This is the content of box 5</div>
+<div class="text-box">This is the content of box 3</div>
+<div class="text-box">This is the content of box 4</div>
+<div class="text-box">This is the content of box 5</div>
+
+</body>
+</html>
+
+
+
